@@ -1,0 +1,22 @@
+.logoI{
+    width: 120px;
+}
+
+#nav_con{
+    background-color: #0B36A8;
+}
+
+.icon{
+    width: 50px;
+}
+
+.redesItem{
+    display: list-item;
+}
+
+@media(max-width: 575px) {
+.redesItem {
+    display: none;
+}
+    
+}

@@ -1,0 +1,40 @@
+<div class="position-relative">
+    <div>
+        <img [src]="data.banner" alt="" class="img-fluid" id="banner">
+        <div id="editBanner" class="position-absolute bg-dark rounded">
+            <fa-icon  [icon]="faPencil"
+            class="float-right fa-button-light title-light fa-lg p-3 " (click)="open(content)"
+            *ngIf="adminSesion"></fa-icon>
+        </div>
+       
+    </div>
+
+</div>
+
+
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Banner</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <form (ngSubmit)="onEnviar($event)" [formGroup]="form">
+    <div class="modal-body">
+        <div class="mb-3">
+            <label for="Banner">Enlace</label><br>
+            <input type="text"
+                [ngClass]="{'is-invalid' : Banner?.errors && Banner?.touched, 'is-valid': !Banner?.errors && !Banner?.touched}"
+                formControlName="banner" class="form-control">
+            <div *ngIf="Banner?.hasError && Banner?.touched">
+                <p *ngIf="Banner?.hasError('required')" class="text-danger">
+                    Ingrese un enlace para el banner
+                </p>
+            </div><br>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-outline-dark mx-3 my-3">Guardar</button>
+    </div>
+    </form>
+</ng-template>

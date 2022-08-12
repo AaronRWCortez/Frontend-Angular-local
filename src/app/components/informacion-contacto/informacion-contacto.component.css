@@ -1,0 +1,10 @@
+#boton {
+    color: blue;
+    cursor: pointer;
+}
+
+.btn-glass{
+    background-color: white;
+    border-color: white;
+    box-shadow: none;
+}
